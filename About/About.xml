@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <packageId>Caulaflower.SkillRange</packageId>
-  <name>Fluid range</name>
+  <name>Dynamic range</name>
   <author>Caulaflower</author>
   <supportedVersions>
     <li>1.3</li>

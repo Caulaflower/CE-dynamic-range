@@ -48,10 +48,6 @@ namespace PistolRangeTweaken
             {
                 rangeadit = pawn.skills.GetSkill(SkillDefOf.Shooting).Level * (-1f);
             }
-            else if ((pawn.skills.GetSkill(SkillDefOf.Shooting).Level > 5f))
-            {
-                rangeadit = 0f;
-            }
             verbPropsCE2.range += rangeadit;
             Log.Message(verbPropsCE2.range.ToString().Colorize(UnityEngine.Color.magenta));
             if (this.parent.TryGetComp<CompEquippable>().PrimaryVerb is Verb_ShootCE)
@@ -117,6 +113,8 @@ namespace PistolRangeTweaken
             if (pwan.ParentHolder is Map)
             {
                 List<IntVec3> amongus = pwan.CellsAdjacent8WayAndInside().ToList();
+
+                /*
                 if (pwan.Rotation == Rot4.East)
                 {
                     amongus.RemoveAll(tt33 => tt33.x <= pwan.Position.x);
@@ -140,7 +138,8 @@ namespace PistolRangeTweaken
                     amongus.Clear();
                     amongus.Add(new IntVec3 { x = pwan.Position.x, z = pwan.Position.z + 1, y = pwan.Position.y });
 
-                }
+                }*/
+
                 foreach (IntVec3 intvec in amongus)
                 {
                     amongUS.AddRange(intvec.GetThingList(Find.CurrentMap).FindAll(tt21 => tt21.def.fillPercent >= 0.4f && tt21.def.fillPercent < 1));
