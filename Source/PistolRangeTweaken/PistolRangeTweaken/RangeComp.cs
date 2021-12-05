@@ -196,7 +196,7 @@ namespace PistolRangeTweaken
 
             ticks++;
 
-            Log.Message(__instance.Name.ToStringShort + ticks);
+           
 
 
 
@@ -206,7 +206,6 @@ namespace PistolRangeTweaken
 
                 if ((__instance.equipment?.Primary?.TryGetComp<RangerComp>() ?? null) != null)
                 {
-                    Log.Message(__instance.Name.ToStringShort);
                     __instance.equipment.Primary.TryGetComp<RangerComp>().RangeTick(__instance);
                 }
 
