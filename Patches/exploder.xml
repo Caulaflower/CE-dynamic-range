@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/../../comps</xpath>
+    <value>
+      <li Class="PistolRangeTweaken.RangerP">
+          
+      </li>
+    </value>
+  </Operation>
+</Patch>
