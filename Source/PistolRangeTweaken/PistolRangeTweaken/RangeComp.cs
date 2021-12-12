@@ -39,7 +39,12 @@ namespace PistolRangeTweaken
 
             if (!(pawn?.kindDef?.RaceProps?.Humanlike ?? false))
             {
-                Log.Message("returning".Colorize(UnityEngine.Color.green));
+                if (Prefs.DevMode)
+                {
+                    Log.Message("returning".Colorize(UnityEngine.Color.green));
+                }
+
+                
                 return;
             }
             VerbPropertiesCE verbPropsCE2 = (VerbPropertiesCE)verpPropsCE.MemberwiseClone();
@@ -69,9 +74,20 @@ namespace PistolRangeTweaken
             {
                 VerbPropertiesCE verbPropsCE2 = (VerbPropertiesCE)verpPropsCE.MemberwiseClone();
                 var adrange = ((Covers(pawn).First().def.fillPercent * 2.5f));
-                Log.Message("range change is: " + adrange.ToString().Colorize(UnityEngine.Color.blue) + " source (" + (Covers(pawn).First().def.label + ")"));
+
+                if (Prefs.DevMode)
+                {
+                    Log.Message("range change is: " + adrange.ToString().Colorize(UnityEngine.Color.blue) + " source (" + (Covers(pawn).First().def.label + ")"));
+                }
+                    
                 verbPropsCE2.range *= adrange;
-                Log.Message("full range is: " + verbPropsCE2.range.ToString().Colorize(UnityEngine.Color.red));
+
+                if (Prefs.DevMode)
+                {
+                    Log.Message("full range is: " + verbPropsCE2.range.ToString().Colorize(UnityEngine.Color.red));
+                }
+
+                
                 if (this.parent.TryGetComp<CompEquippable>().PrimaryVerb is Verb_ShootCE)
                 {
                     var verbshoots = (Verb_ShootCE)this.parent.TryGetComp<CompEquippable>().PrimaryVerb;
